@@ -153,3 +153,37 @@ td p,
 .mb-0 {
   margin-bottom: 0px;
 }
+
+.grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+}
+
+@media screen and (max-width: 900px) {
+  .grid {
+    grid-gap: 3rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .grid {
+    grid-gap: 3rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .grid { 
+    grid-template-columns: repeat(2, 1fr);  
+  }
+}
+
+@media (min-width: 900px) {
+  .grid { 
+    grid-template-columns: repeat(3, 1fr); 
+  }
+}
+
+.grid .item .card {
+  height: 100%;
+}

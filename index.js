@@ -14,6 +14,10 @@ app.get("/github", (request, response) => {
   response.redirect("https://github.com/ilyBenny")
 })
 
+app.get("*", (request, response) => {
+  response.sendFile(__dirname + "/public/error.html")
+})
+
 app.listen(80, ()=>{
   console.log("listening on :80")
 })
