@@ -1,0 +1,1 @@
+document.querySelector("link[id='theme-css']").href = "assets/css/light.css";
