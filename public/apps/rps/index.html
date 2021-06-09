@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock, Paper, Scissors</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="/assets/css/light.css" id="theme-css">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="assets/style.css">
+  </head>
+  <body>
+    <div class="center">
+      <div class="card" style="transform: scale(1)!important;" id="start-game-card">
+        <h2 style="left: 50%; transform: translateX(-50%);">Rounds</h2>
+        <p style="text-align: center;">Enter an amount of rounds below and press start to begin playing.</p>
+        <input type="number" value="3" id="round-amount" min="3" max="32">
+        <button onclick="startGame()" style="margin-top: 10px;">Start!</button>
+      </div>
+
+      <div class="card" style="transform: scale(1)!important;" id="game-card">
+        <h2 style="left: 50%; transform: translateX(-50%);" id="game-result">Pick Your Poison</h2>
+        <p style="text-align: center; margin-top: 2px;" id="game-result-detail"></p>
+        
+        <div id="game-buttons" style="display: flex; text-align: center; content-align: center; margin-top: 25px; background-color: #EFEFEF; border-radius: 10px;">
+          <button style="padding-top: 10px; padding-bottom: 10px;" onclick="game('rock')"><img style="width: 50px; padding-top: 10px;" src="assets/images/rock.png"></button>
+          <button style="padding-top: 10px; padding-bottom: 10px;" onclick="game('paper')"><img style="width: 50px; padding-top: 10px;" src="assets/images/paper.png"></button>
+          <button style="padding-top: 10px; padding-bottom: 10px;" onclick="game('scissors')"><img style="width: 50px; padding-top: 10px;" src="assets/images/scissors.png"></button>
+        </div>
+      </div> 
+
+      <div class="card" style="transform: scale(1)!important;" id="game-over-card">
+        <h2 style="left: 50%; transform: translateX(-50%);">Game Over!</h2>
+        <p style="text-align: center; margin-top: 2px;" id="game-over-detail"></p>
+        <button onclick="newGame()" style="margin-top: 10px;">New Game</button>
+      </div>           
+    </div>
+
+    <script src="assets/main.js"></script>
+  </body>
+</html>

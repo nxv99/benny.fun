@@ -77,6 +77,8 @@ td h5:after,
 .card h2:after,
 .card h3:after,
 .card h4:after,
-.card h5:after {
+.card h5:after,
+input,
+button {
   cursor: url("/images/cursor.png"), auto!important;
 }

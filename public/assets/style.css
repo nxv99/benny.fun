@@ -2,13 +2,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
 
 html {
-  
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none;  
+  user-select: none;
+  scroll-behavior: smooth;  
+}
+
+body {
+  margin: 0px;
+}
+
+.container-fluid {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.container {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+@media screen and (max-width: 580px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  } 
+}
+
+@media screen and (max-width: 425px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 .center {
@@ -186,4 +214,15 @@ td p,
 
 .grid .item .card {
   height: 100%;
+}
+
+.chevron {
+  transform: scale(2);
+  color: rgba(255, 255, 255, 0.288);
+  transition: transform .25s, color .25s;
+}
+
+.chevron:hover {
+  transform: scale(2.15);
+  color: rgba(255, 255, 255, 0.420);
 }

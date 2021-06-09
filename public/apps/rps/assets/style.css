@@ -1,0 +1,32 @@
+input {
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  font-size: 2rem;
+  text-align: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+button {
+  width: 100%;
+  font-size: 1.25rem;
+  border: none;
+  border-radius: 5px;
+  padding: .5rem;
+  background-color: #EFEFEF;
+  font-family: poppins, sans-serif;
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: rgb(228, 228, 228);
+}
