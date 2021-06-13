@@ -19,6 +19,11 @@ p {
   color: #00000036;
 }
 
+.chevron:hover {
+  color: #00000057;
+  filter: drop-shadow(0px 0px 5px rgb(0, 0, 0, .2));
+}
+
 td h1:after,
 td h2:after,
 td h3:after,
