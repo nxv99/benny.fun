@@ -7,6 +7,18 @@ p {
   color: #3f414c;
 }
 
+.footer-link {
+  color: #3f414c;
+}
+
+.footer-link:hover {
+  color: #646672;
+}
+
+.chevron {
+  color: #00000036;
+}
+
 td h1:after,
 td h2:after,
 td h3:after,

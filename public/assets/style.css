@@ -21,22 +21,11 @@ body {
 }
 
 .container {
-  padding-left: 5rem;
-  padding-right: 5rem;
-}
-
-@media screen and (max-width: 580px) {
-  .container {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  } 
-}
-
-@media screen and (max-width: 425px) {
-  .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
+  margin-right: auto;
+  margin-left:  auto;
+  max-width: 800px;
+  padding-right: 10px;
+  padding-left:  10px;
 }
 
 .center {
@@ -66,7 +55,6 @@ h1, h2, h3, h4, h5 {
 }
 
 p {
-  text-align: justify;
   margin-top: 2px;
   font-family: 'Open Sans', sans-serif;
   
@@ -218,11 +206,104 @@ td p,
 
 .chevron {
   transform: scale(2);
-  color: rgba(255, 255, 255, 0.288);
   transition: transform .25s, color .25s;
 }
 
 .chevron:hover {
   transform: scale(2.15);
-  color: rgba(255, 255, 255, 0.420);
+}
+
+@keyframes chevronBob {
+  to {
+    top: 40vh;
+  }
+}
+
+.chevron-wrapper {
+  position: absolute; 
+  top: 35vh; 
+  left: 50%;
+  animation: chevronBob infinite;
+}
+
+.footer {
+  width: 100%;
+  padding: 1.25rem;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.flex2 {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex2 .right {
+  margin-right: 10px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.flex2 .left {
+  margin-left: 10px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .flex2 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .flex2 .right p,
+  .flex2 .left p,
+  .flex2 .right h1,
+  .flex2 .right h2,
+  .flex2 .right h3,
+  .flex2 .right h4,
+  .flex2 .right h5,
+  .flex2 .left h1,
+  .flex2 .left h2,
+  .flex2 .left h3,
+  .flex2 .left h4,
+  .flex2 .left h5 {
+    text-align: left;
+  }
+
+  .flex2 .right {
+    float: none;
+    margin-right: 0px;
+  }
+
+  .flex2 .left {
+    float: none;
+    margin-left: 0px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  display: none;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0000001c;
+  border-radius: 10px;
 }

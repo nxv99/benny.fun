@@ -14,28 +14,60 @@
     <link rel="icon" href="images/favicon.png" type="image/png">
     <link rel="stylesheet" href="assets/css/light.css" id="theme-css">
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>.hidden{opacity: 0%;}</style>
   </head>
   <body>
-    <div class="center">
-      <h1>
-        <span style="position: absolute; top: 4px;">
-          <img src="images/favicon.png" style="width:30px;">
+    <div class="center" style="font-size: 110%;">
+      <h1 id="title" class="hidden">
+        <span style="position: absolute; top: 5px;">
+          <img src="images/favicon.png" style="width:35px;">
         </span> 
         <span style="margin-left: 40px;">Hi! I'm Ben,</span>
       </h1>
 
-      <p style="text-align: justify;">
+      <p id="about" class="hidden">
         a 14-year-old student and developer from the United Kingdom. I like to develop in Python, PHP and JavaScript.
       </p>
       
-      <p style="margin-bottom: 0px;">
-        Check out my projects @ <a href="/projects">/projects</a>
-      </p>       
-      <p style="margin-bottom: 0px;">
-        Check out my code @ <a href="/github">/github</a>
-      </p>     
+      <div id="link1" class="hidden chevron-wrapper">
+        <a href="#content"><i class="fas fa-chevron-down chevron"></i></a>
+      </div>
     </div>
 
+    <div id="content" style="margin-top: 100vh;">
+      <div class="container">
+        <div class="flex2">
+          <div class="right">
+            <img width="100%" src="https://images.unsplash.com/photo-1622505635920-6d98a063cfd9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=334&q=80">
+          </div>
+          <div class="left">
+            <h2>Lorem Ipsum</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut consectetur culpa nulla consequatur, doloribus sed accusantium a molestias assumenda necessitatibus cum delectus voluptatibus, facere dignissimos maxime totam id mollitia eaque.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer" style="padding-left: 0px; padding-right: 0px; margin-top: 5rem;">
+      <div class="container flex">
+        <div class="left" style="margin-left: 20px;">
+          <h3>Ben</h3>
+          <p>United Kingdom</p>
+        </div>
+        
+        <div class="right" style="margin-right: 20px;">
+          <p><a class="footer-link" href="mailto:hello@benny.fun">Contact</a></p>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/faad56354a.js" crossorigin="anonymous"></script>
     <script src="assets/script.js"></script>
+    <script>
+      slideIn(document.getElementById("title"), 200)
+      slideIn(document.getElementById("about"), 400)
+      slideIn(document.getElementById("link1"), 1000)
+    </script>
   </body>
 </html>
