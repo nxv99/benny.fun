@@ -24,18 +24,18 @@ function slideIn(element, delay) {
   }, delay + 1000)  
 }
 
-function toTopButton() {
-  if (
-    document.body.scrollTop > 300 || 
-    document.documentElement.scrollTop > 300 
-    ) {
-    document.getElementById("toTopButton").style.opacity = "100";
-  } else {
-    document.getElementById("toTopButton").style.opacity = "0";
-  }
+// function toTopButton() {
+//   if (
+//     document.body.scrollTop > 300 || 
+//     document.documentElement.scrollTop > 300 
+//     ) {
+//     document.getElementById("toTopButton").style.opacity = "100";
+//   } else {
+//     document.getElementById("toTopButton").style.opacity = "0";
+//   }
 
-  setTimeout(() => {toTopButton()}, 1)
-}
+//   setTimeout(() => {toTopButton()}, 1)
+// }
 
 function elementInViewport(el) {
   var top = el.offsetTop;
@@ -57,4 +57,4 @@ function elementInViewport(el) {
   );
 }
 
-setTimeout(() => {toTopButton()}, 1)
+// setTimeout(() => {toTopButton()}, 1)
