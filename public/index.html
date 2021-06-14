@@ -15,12 +15,12 @@
     <link rel="stylesheet" href="assets/css/light.css" id="theme-css">
     <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <style>.hidden{opacity: 0%;}</style>
+    <style>.hidden{opacity: 0%;}.fullyhidden{display: none;}</style>
   </head>
   <body>
     <!-- <a id="toTopButton" class="button" onclick="document.documentElement.scrollTop = 0;document.body.scrollTop = 0;"><i style="transform: scale(2); color:inherit;" class="fas fa-chevron-up"></i></a> -->
 
-    <div id="navbar" class="hidden navbar">
+    <!-- <div id="navbar" class="hidden navbar">
       <div class="container">
         <div class="navbar-content">
           <h3 class="navbar-title" onclick="document.documentElement.scrollTop = 0; document.body.scrollTop = 0;">Ben</h3>
@@ -31,6 +31,22 @@
             <li class="navbar-link"><a onclick="window.location.href = 'https://benny.fun/github'">Github</a></li>
           </ul>
         </div>
+      </div>
+    </div> -->
+
+    <div id="navbar" class="hidden" onclick="checkMenu()">
+      <a id="navbarbars"><i class="fas fa-bars"></i></a>
+    </div>
+
+    <div id="navigation" class="fullyhidden">
+      <div class="center" style="text-align: center;">
+        <h1 id="aboutNavLink" onmouseover="document.getElementById('navigation').style.backgroundColor = '#85beff';document.getElementById('navbar').style.backgroundColor = '#85beff';document.getElementById('navbarbars').style.color = '#4f90da'" onmouseout="document.getElementById('navigation').style.backgroundColor = '#FFC9FC';document.getElementById('navbar').style.backgroundColor = '#FFC9FC';document.getElementById('navbarbars').style.color = '#c587c2'"><a class="navbarlink" onclick="document.getElementById('aboutMeContent').scrollIntoView(); forceCloseMenu()">ABOUT</a></h1>
+        
+        <h1 id="infoNavLink" onmouseover="document.getElementById('navigation').style.backgroundColor = '#ff8885';document.getElementById('navbar').style.backgroundColor = '#ff8885';document.getElementById('navbarbars').style.color = '#ce4e4a'" onmouseout="document.getElementById('navigation').style.backgroundColor = '#FFC9FC';document.getElementById('navbar').style.backgroundColor = '#FFC9FC';document.getElementById('navbarbars').style.color = '#c587c2'" style="margin-top: 20px;"><a class="navbarlink" onclick="document.getElementById('infoContent').scrollIntoView(); forceCloseMenu()">INFO</a></h1>
+        
+        <h1 id="projectsNavLink" onmouseover="document.getElementById('navigation').style.backgroundColor = '#cdff85';document.getElementById('navbar').style.backgroundColor = '#cdff85';document.getElementById('navbarbars').style.color = '#9ad04c'" onmouseout="document.getElementById('navigation').style.backgroundColor = '#FFC9FC';document.getElementById('navbar').style.backgroundColor = '#FFC9FC';document.getElementById('navbarbars').style.color = '#c587c2'" style="margin-top: 20px;"><a class="navbarlink" onclick="document.getElementById('projectsContent').scrollIntoView(); forceCloseMenu()">PROJECTS</a></h1>
+        
+        <h1 style="margin-top: 20px;"><a class="navbarlink" onclick="window.location.href = 'https://benny.fun/github'">GITHUB</a></h1>
       </div>
     </div>
 
@@ -170,6 +186,7 @@
     <script src="https://kit.fontawesome.com/faad56354a.js" crossorigin="anonymous"></script>
     <script src="assets/script.js"></script>
     <script>
+      var menuOpen = true
       var loadedMainContent = false
       var loadedProjectsContent = false
       var loadedInfoContent = false
@@ -199,6 +216,31 @@
           element.classList.remove("animate__zoomIn")
         }, delay + 1500)  
       }
+
+      function fadeInSide(element, delay) {
+        setTimeout(() => {
+          element.classList.remove("hidden")
+          element.classList.add("animate__animated")
+          element.classList.add("slideInTopRight")
+        }, delay)                            
+        setTimeout(() => {
+          element.classList.remove("animate__animated")
+          element.classList.remove("slideInTopRight")          
+        }, delay + 1500)  
+      }
+
+      function fadeOutSide(element, delay) {
+        setTimeout(() => {
+          element.classList.add("animate__animated")
+          element.classList.add("slideOutTopRight")
+          element.classList.add("navigationBorderOut")
+        }, delay)
+        setTimeout(() => {
+          element.classList.remove("animate__animated")
+          element.classList.remove("slideOutTopRight")
+          element.classList.remove("navigationBorderOut")
+        }, delay + 1500)  
+      }      
 
       function hide(element) {
         element.classList.add("hidden")
@@ -269,6 +311,62 @@
 
       // document.documentElement.scrollTop = 0
       // document.body.scrollTop = 0
+
+      function forceCloseMenu() {
+        var menu = document.getElementById("navigation")
+        fadeOutSide(menu, 100)
+        document.body.style.overflow = "overlay"
+
+        setTimeout(() => {
+          menu.classList.add("fullyhidden")
+          menu.classList.remove("navigationBorderOut")
+          document.getElementById("navbarbars").innerHTML = '<i class="fas fa-bars"></i>'
+        }, 900)        
+        menuOpen = true
+      }
+
+
+      function forceOpenMenu() {
+        var menu = document.getElementById("navigation")
+        menu.classList.remove("fullyhidden")
+        fadeInSide(menu, 100)
+        document.body.style.overflow = "hidden"
+        document.getElementById("navbarbars").innerHTML = '<i class="fas fa-times"></i>'
+        menuOpen = false
+      }
+
+      function checkMenu() {
+        var menu = document.getElementById("navigation")
+        if (menuOpen) {
+          // opening menu
+
+          menu.classList.add("hidden")
+          menu.classList.remove("fullyhidden")
+          fadeInSide(menu, 100)
+          if (/chrome/i.test( navigator.userAgent )) {
+            document.body.style.overflow = "hidden"
+          }
+          setTimeout(() => {
+            document.getElementById("navbarbars").innerHTML = '<i class="fas fa-times"></i>'
+          }, 900)
+
+          menuOpen = false
+        } else {
+          // closing menu
+
+          fadeOutSide(menu, 100)
+
+          setTimeout(() => {
+            menu.classList.add("fullyhidden")
+            if (/chrome/i.test( navigator.userAgent )) {
+              document.body.style.overflow = "overlay"
+            }
+            document.getElementById("navbarbars").innerHTML = '<i class="fas fa-bars"></i>'
+          }, 900)
+
+          menuOpen = true
+        }
+      }
     </script>
   </body>
 </html>
