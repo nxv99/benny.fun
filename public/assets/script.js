@@ -57,4 +57,11 @@ function elementInViewport(el) {
   );
 }
 
+// onmousemove = function(e) {
+//   var d = document.getElementById('mouseCircle');
+//   d.style.position = "absolute";
+//   d.style.left = e.clientX+'px';
+//   d.style.top = e.clientY+'px';  
+// }
+
 // setTimeout(() => {toTopButton()}, 1)
