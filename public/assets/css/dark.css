@@ -94,3 +94,11 @@ input,
 button {
   cursor: url("/images/darkcursor.png"), auto!important;
 }
+
+.card {
+  background: rgba(0, 0, 0, 0.5)!important;
+}
+
+.card-footer {
+  background-color: rgba(0, 0, 0, 0.65)!important;
+}

@@ -6,8 +6,12 @@ const app = express()
 app.use(express.static(__dirname + "/public/"))
 app.use('assets/', serveIndex(__dirname + '/assets/'))
 
+app.get("/search", (request, response) => {
+  response.sendFile(__dirname + "/public/search.html")
+})
+
 app.get("/github", (request, response) => {
-  response.redirect("https://github.com/ilyBenny")
+  response.redirect("https://github.com/bentettmar")
 })
 
 app.get("*", (request, response) => {
